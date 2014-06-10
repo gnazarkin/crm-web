@@ -29,6 +29,7 @@ end
 
 # View a contact
 get '/contacts/:id' do
+	"Contact IDs"
 end 
 
 
@@ -36,4 +37,5 @@ end
 # Modify a contact
 # View all contacts
 get '/contacts/:id/edit' do
+	"Edit contacts"
 end 

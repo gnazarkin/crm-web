@@ -15,13 +15,20 @@ get '/contacts' do
 	erb :contacts
 end 
 
+# Add a new contact
+get '/contacts/new' do
+	erb :new_contact
+end 
+
+post '/contacts' do 
+	puts params
+end 
+
 # View a contact
 get '/contacts/:id' do
 end 
 
-# Add a new contact
-get '/contacts/new' do
-end 
+
 
 # Modify a contact
 # View all contacts

@@ -32,8 +32,6 @@ get '/contacts/:id' do
 	"Contact IDs"
 end 
 
-
-
 # Modify a contact
 # View all contacts
 get '/contacts/:id/edit' do

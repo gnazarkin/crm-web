@@ -5,16 +5,19 @@ get '/' do
 	erb :index
 end
 
+# View all contacts
+get '/contacts' do
+end 
+
 # View a contact
 get '/contacts/:id' do
-	
 end 
 
-#Add a new contact
+# Add a new contact
 get '/contacts/new' do
-	"New contacts"
 end 
 
-get '/contacts' do
-	"This is the contact page"
+# Modify a contact
+# View all contacts
+get '/contacts/:id/edit' do
 end 

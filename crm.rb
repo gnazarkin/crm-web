@@ -2,7 +2,7 @@ require 'sinatra'
 require_relative 'contact'
 require_relative 'rolodex'
 
-@@rolodex = rolodex.new
+@@rolodex = Rolodex.new
 
 get '/' do
 	@crm_app_name = "My CRM"

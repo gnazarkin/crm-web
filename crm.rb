@@ -5,9 +5,15 @@ get '/' do
 	erb :index
 end
 
-get '/about' do
-	"This is my about page"
-end
+# View a contact
+get '/contacts/:id' do
+	
+end 
+
+#Add a new contact
+get '/contacts/new' do
+	"New contacts"
+end 
 
 get '/contacts' do
 	"This is the contact page"

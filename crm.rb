@@ -20,35 +20,28 @@ get '/contacts' do
 end 
 
 post '/contacts' do 
-	@crm_app_name = "My CRM"
 	new_contact = Contact.new(params[:first_name], params[:last_name], params[:email], params[:note])
 	@@rolodex.add_contact(new_contact)
 	redirect to('/contacts')
 end 
 
-get "/contacts/1000" do
-	@crm_app_name = "My CRM"
-  @contact = @@rolodex.find(1000)
-  erb :show_contact
-end
-
 # Add a new contact
-get '/contacts/new' do
+get '/contact/new' do
 	@crm_app_name = "My CRM"
 	erb :new_contact
 end 
 
-
-
-# View a contact
-get '/contacts/:id' do
+get "/contacts/:id" do
 	@crm_app_name = "My CRM"
-	erb :view_contact
-end 
+    @contact = @@rolodex.find(params[:id].to_i)
+  if @contact
+    erb :edit_contact
+  else
+    raise Sinatra::NotFound
+  end
+end
 
-# Modify a contact
-# View all contacts
-get '/contacts/:id/edit' do
+get '/contact/:id/edit' do
 	@crm_app_name = "My CRM"
 	erb :edit_contacts
 end 

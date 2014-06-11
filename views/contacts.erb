@@ -1,7 +1,9 @@
-<h1>All Contacts</h1>
-<h2><a href="/">Main Menu</a></h2>
-<ul>
-	<% @@rolodex.contacts.each do |contact| %>
-		<li><%= contact.first_name %> <%= contact.last_name %> <%= contact.email %></li>
-	<% end %>
-</ul>
+
+<div class="pure-menu pure-menu-open">
+    <a class="pure-menu-heading">Contacts</a>
+		<ul>
+			<% @@rolodex.contacts.each do |contact| %>
+				<li><%= contact.first_name %> <%= contact.last_name %> <%= contact.email %></li>
+			<% end %>
+		</ul>
+</div>

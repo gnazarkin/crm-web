@@ -1,0 +1,47 @@
+body{
+	background-image: url("http://scenarhome.us/wp-content/uploads/2013/11/Painting-Brick-Walls-95.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.pure-menu{
+	text-align: center;
+	width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.pure-menu.pure-menu-open {
+	background: none;
+}
+.pure-menu li a:hover, .pure-menu li a:focus {
+	background: rgba(240, 240, 240, 0.6);
+}
+.heading{
+border-top: 2px solid #000;
+}
+a {
+	-webkit-transition: all 500ms ease-out;
+	-moz-transition: all 500ms ease-out;
+	-ms-transtition: all 500ms ease-out;
+	transition: all 500ms ease-out;
+}
+h1{
+	text-align: center;
+	width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+}
+div{
+	background-color:rgba(255,0,0,0.5);
+}
+form{
+	text-align: center;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+h1 a{
+	text-decoration:none;
+}
+h1 a:visited{
+	color:black;
+}

@@ -1,9 +1,13 @@
-<h1>Create new Contact</h1>
+<div class="pure-menu pure-menu-open">
+    <a class="pure-menu-heading">Create new Contact</a>
+  </div>
 
-<form action="/contacts" method="post">
-	<input type="text" name="first_name">
-	<input type="text" name="last_name">
-	<input type="text" name="email">
-	<input type="text" namee="note">
-	<input type="submit" name="Submit">
+<form class= "pure-form" action="/contacts" method="post">
+	<fieldset>
+		<input type="first name" placeholder="First Name" name="first_name" >
+		<input type="last name" placeholder="Last Name" name="last_name">
+		<input type="email text" placeholder="E-Mail" name="email">
+		<input type="note" placeholder="Note" name="note">
+		<button type="submit" class="pure-button pure-button-primary">Submit</button>
+	</fieldset>
 </form>

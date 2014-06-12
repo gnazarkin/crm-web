@@ -36,7 +36,7 @@ get '/contacts/:id' do
 end
 
 get '/edit_list' do
-		@crm_app_name = "My CRM"
+	@crm_app_name = "My CRM"
 		erb :edit_list
 	end
 

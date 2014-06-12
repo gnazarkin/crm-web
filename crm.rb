@@ -2,13 +2,22 @@ require 'sinatra'
 require 'data_mapper'
 
 DataMapper.setup(:default, "sqlite3:database.sqlite3")
-require_relative 'contact'
 require_relative 'rolodex'
 
 @@rolodex = Rolodex.new
 @crm_app_name = "My CRM"
 @@rolodex.add_contact(Contact.new("Johnny", "Bravo", "johnny@bitmakerlabs.com", "Rockstar"))
 
+class Contact
+  attr_accessor :id, :first_name, :last_name, :email, :note
+
+  def initialize(first_name, last_name, email, note)
+    @first_name = first_name
+    @last_name = last_name
+    @email = email
+    @note = note
+  end
+end
 
 
 get '/' do

@@ -2,12 +2,19 @@
     <a class="pure-menu-heading">Edit Contact</a>
   </div>
 
-<form class= "pure-form" action="/contacts" method="post">
+<form class = "pure-form" action="/contacts/<%= @contact.id %>" method="post">
 	<fieldset>
-		<input type="first name" placeholder="First Name" name="first_name" >
-		<input type="last name" placeholder="Last Name" name="last_name">
-		<input type="email text" placeholder="E-Mail" name="email">
-		<input type="note" placeholder="Note" name="note">
-		<button type="submit" class="pure-button pure-button-primary">Submit</button>
-	</fieldset>
+  <input type="hidden" name="_method" value="put">
+  <input type="text" name="first_name" value="<%= @contact.first_name %>">
+  <input type="text" name="last_name" value="<%= @contact.last_name %>">
+  <input type="text" name="email" value="<%= @contact.email %>">
+  <input type="text" name="note" value="<%= @contact.note %>">
+  <button type="submit" class="pure-button pure-button-primary">Submit</button>
+</fieldset>
 </form>
+
+<form class = "pure-form" action="/contacts/<%= @contact.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button type="submit" class="pure-button pure-button-primary" name="Delete Contact">Delete</button>
+</form>
+

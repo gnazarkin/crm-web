@@ -1,8 +1,21 @@
-<div class="pure-menu pure-menu-open">
-    <a class="pure-menu-heading">Contact Info</a>
- </div>
-
-<h2><%= @contact.first_name %> <%= @contact.last_name %></h2>
+<!-- <h1><%= @contact.first_name %> <%= @contact.last_name %></h1>
 <p><strong>Email:</strong> <%= @contact.email %></p>
 <p><strong>Note:</strong></p>
-<p><%= @contact.note %></p>
+<p><%= @contact.note %></p> -->
+
+<div class="pure-menu pure-menu-open">
+    <a class="pure-menu-heading"><%= @contact.first_name %> <%= @contact.last_name %></a>
+
+    <ul>
+        <li><strong>Email:</strong> <%= @contact.email %></li>
+        <li><strong>Note:</strong> <%= @contact.note %></li>
+    </ul>
+</div>
+
+<!-- Do I really need all this double code? -->
+
+<form class = "pure-form" action="/contacts/<%= @contact.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button type="submit" class="pure-button pure-button-primary" name="Delete Contact">Delete</button>
+</form>
+

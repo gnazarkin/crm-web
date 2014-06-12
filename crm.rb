@@ -24,16 +24,39 @@ post '/contacts' do
 	@@rolodex.add_contact(new_contact)
 	redirect to('/contacts')
 end 
-
 # Add a new contact
 get '/contact/new' do
 	@crm_app_name = "My CRM"
 	erb :new_contact
 end 
 
-get "/contacts/:id" do
+get '/contacts/:id' do
+	@contact = @@rolodex.find(params[:id].to_i)
+	erb :show_contact
+end
+
+get '/edit_list' do
+		@crm_app_name = "My CRM"
+		erb :edit_list
+	end
+
+put '/contacts/:id' do
+	 @contact = @@rolodex.find(params[:id].to_i)
+  if @contact
+    @contact.first_name = params[:first_name]
+    @contact.last_name = params[:last_name]
+    @contact.email = params[:email]
+    @contact.note = params[:note]
+
+    redirect to("/contacts")
+  else
+    raise Sinatra::NotFound
+  end
+end
+
+get '/contacts/:id/edit' do
 	@crm_app_name = "My CRM"
-    @contact = @@rolodex.find(params[:id].to_i)
+	@contact = @@rolodex.find(params[:id].to_i)
   if @contact
     erb :edit_contact
   else
@@ -41,7 +64,17 @@ get "/contacts/:id" do
   end
 end
 
-get '/contact/:id/edit' do
-	@crm_app_name = "My CRM"
-	erb :edit_contacts
-end 
+delete "/contacts/:id" do
+  @contact = @@rolodex.find(params[:id].to_i)
+  if @contact
+    @@rolodex.remove_contact(@contact)
+    redirect to("/contacts")
+  else
+    raise Sinatra::NotFound
+  end
+end
+
+
+
+
+

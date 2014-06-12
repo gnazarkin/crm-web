@@ -9,15 +9,17 @@ require_relative 'rolodex'
 @@rolodex.add_contact(Contact.new("Johnny", "Bravo", "johnny@bitmakerlabs.com", "Rockstar"))
 
 class Contact
-  attr_accessor :id, :first_name, :last_name, :email, :note
+  include DataMapper::Resource
 
-  def initialize(first_name, last_name, email, note)
-    @first_name = first_name
-    @last_name = last_name
-    @email = email
-    @note = note
-  end
+  property :id, Serial
+  property :first_name, String
+  property :last_name, String
+  property :email, String
+  property :note, String
 end
+
+DataMapper.finalize
+DataMapper.auto_upgrade!
 
 
 get '/' do

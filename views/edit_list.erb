@@ -1,7 +1,7 @@
 <div class="pure-menu pure-menu-open">
     <a class="pure-menu-heading">Contacts</a>
 		<ul>
-			<% @@rolodex.contacts.each do |contact| %>
+			<% @contacts.each do |contact| %>
 				<li><a href="/contacts/<%= contact.id %>/edit"><%= contact.first_name %> <%= contact.last_name %> <%= contact.email %></a></li>
 			<% end %>
 		</ul>

@@ -17,5 +17,8 @@
 <form class = "pure-form" action="/contacts/<%= @contact.id %>" method="post">
   <input type="hidden" name="_method" value="delete">
   <button type="submit" class="pure-button pure-button-primary" name="Delete Contact">Delete</button>
+  
+  <button class="pure-button pure-button-primary"><a href="/contacts/<%= @contact.id %>/edit">Edit</a></button>
 </form>
+
 

@@ -45,3 +45,7 @@ h1 a{
 h1 a:visited{
 	color:black;
 }
+button a:visited{
+	color: white;
+	text-decoration: none;
+}

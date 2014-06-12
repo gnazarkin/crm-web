@@ -1,4 +1,7 @@
 require 'sinatra'
+require 'data_mapper'
+
+DataMapper.setup(:default, "sqlite3:database.sqlite3")
 require_relative 'contact'
 require_relative 'rolodex'
 
@@ -31,6 +34,7 @@ get '/contact/new' do
 end 
 
 get '/contacts/:id' do
+  @crm_app_name = "My CRM"
 	@contact = @@rolodex.find(params[:id].to_i)
 	erb :show_contact
 end
@@ -74,7 +78,20 @@ delete "/contacts/:id" do
   end
 end
 
+get "/search" do
+  @crm_app_name = "My CRM"
+  erb :search
+end
 
+post "/search" do
+  puts params
+  @contact = @@rolodex.find_last(params[:last_name].to_s)
+  if @contact
+    redirect to("/contacts/#{@contact.id}")
+  else
+    raise Sinatra::NotFound
+  end 
+end
 
 
 

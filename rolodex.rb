@@ -24,4 +24,9 @@ class Rolodex
     @contacts.delete(contact)
   end
 
+  def find_last(last_name)
+    last_name.downcase!
+    @contacts.find{|contact| contact.last_name.downcase==last_name}
+  end
+
 end 

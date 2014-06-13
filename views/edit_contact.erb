@@ -9,11 +9,11 @@
   <input type="text" name="last_name" value="<%= @contact.last_name %>">
   <input type="text" name="email" value="<%= @contact.email %>">
   <input type="text" name="note" value="<%= @contact.note %>">
-  <button type="submit" class="pure-button pure-button-primary">Submit</button>
 </fieldset>
 </form>
 
 <form class = "pure-form" action="/contacts/<%= @contact.id %>" method="post">
+  <button type="submit" class="pure-button pure-button-primary">Submit</button>
   <input type="hidden" name="_method" value="delete">
   <button type="submit" class="pure-button pure-button-primary" name="Delete Contact">Delete</button>
 </form>

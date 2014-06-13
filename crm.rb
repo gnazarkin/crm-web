@@ -109,13 +109,17 @@ end
 
 post "/search" do
   puts params
-  @contact = Contact.get(params[:last_name].to_s)
+  @contact = Contact.first(:last_name => params[:last_name])
   if @contact
     redirect to("/contacts/#{@contact.id}")
   else
-    raise Sinatra::NotFound
+    redirect to("/no_contact")
   end 
 end
 
-
+get "/no_contact" do
+  @crm_app_name = "My CRM"
+  
+  erb :no_contact
+end
 

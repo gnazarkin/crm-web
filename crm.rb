@@ -18,11 +18,13 @@ DataMapper.auto_upgrade!
 
 
 get '/' do
+
 	erb :index
 end 
 
 # View all contacts
 get '/contacts' do
+
   @contacts = Contact.all
 	erb :contacts
 end 
@@ -38,15 +40,18 @@ post '/contacts' do
 end 
 # Add a new contact
 get '/contact/new' do
+
 	erb :new_contact
 end 
 
 get '/contacts/:id' do
+
 	@contact = Contact.get(params[:id].to_i)
 	erb :show_contact
 end
 
 get '/edit_list' do
+
   @contacts = Contact.all
 		erb :edit_list
 	end
@@ -69,6 +74,7 @@ put '/contacts/:id' do
 end
 
 get '/contacts/:id/edit' do
+
 	@contact = Contact.get(params[:id].to_i)
   if @contact
     erb :edit_contact
@@ -88,7 +94,8 @@ delete "/contacts/:id" do
   end
 end
 
-get "/search" do  erb :search
+get "/search" do
+  erb :search
 end
 
 post "/search" do
@@ -102,6 +109,7 @@ post "/search" do
 end
 
 get "/no_contact" do
+
   erb :no_contact
 end
 
